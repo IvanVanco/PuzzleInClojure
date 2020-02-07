@@ -6,9 +6,15 @@ during the specific time, they need to make longest word to win.
 
 # What is new
 
-1. Main view namespace is created with Java Swing interop. 
+1. Refactored Main view namespace. 
+   a) I used function doseq to simulate for loop in Java
+   b) Doto macro for evaluating instance-expr and calling all of the methods/functions
+      with the supplied arguments in succession on the resulting object, returning it.
+   c) -> macro for expanding into a member access (.) of the first member on the first argument, 
+      followed by the next member on the result, etc. For instance:
+      (.. System (getProperties) (get "os.name"))
 
-2. Scoring namespace for calculating score based on different word sizes.  
+2. Made better future organization plan of code structure using next pattern (com.foldername(s).namespace)  
 
 
 **All classes are tested in REPL and using main java function.
