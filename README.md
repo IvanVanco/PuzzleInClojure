@@ -6,25 +6,16 @@ during the specific time, they need to make longest word to win.
 
 # What is new
 
-1. Added Repository namespace. This namespace is place for storing embedded data and function with IO.
-   It conssists of:
-   а) Vectors of latinic and cyrillic letters. They will be used for converting one letter to another.
-   b) Probability map with letter as key and map as value. Map is based of: 
-      1) Weighted coefficient - it represents the probability of drawing semi random letters.
-      2) Boolean key - If true then that letter, if drawned, will be removed from probability distribution function
-   c) Vectors for reading word dictionary and storing supervising words - I implemented Clojure's IO libraby,
-      which is much easier compared to java's IO librabies. 
+1. Added Konvertovanje namespace. This namespace is used for converting latin letters/word into cyrillic.
+   It consists of:
+   а) Letters mappings - got them by importing Repository namespace.
+   b) Convert function latinToCyrillic with 3 parts:
+      1)Transformation function for converting word to letters - this step have some logic built into it, 
+        using serbian's language rules
+      2)Main function for mapping repository letters with result - conversation process
+      3)Reverse function for converting word to letters
+   c) Converting functions to lower and upper cases. 
       
-
-2. Added PorukeView namespace. Used for displaying various messages to the users.
-   It is composed of 3 Java's classes:
-   a) PotvrdaReci view - it is showed when user click on Potvrdi button on MainView, to perform checking of 
-      inserted word existances in drawn letters. 
-   b) Recnik view - It is triggered just after PotvrdaReci view. Frame for displaying checking of 
-      inserted word existances in word dictionary and computer's longest word.
-   c) IstekVremena view - It is composition of other two message views, with time trigger in mind. 
-      I used atom for storing question answer for other application modules.
-
 
 **All classes are tested in REPL and using main java function.
 
