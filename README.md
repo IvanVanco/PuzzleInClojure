@@ -3,27 +3,49 @@ Simulation of the Serbian game called Slagalica,
 where player chooses 12 letters of an alphabet from random generator, and then
 during the specific time, they need to make longest word to win.
 
+# Project documentation
+
+1. Main view namespace with main window; 
+
+2. Message view namespace with all kind of different message views;
+
+3. Repository namespace with all data (possiblities, character list mappings and dictionary); 
+
+4. Converting namespace for storing algorithm for converting latin to cyrillic;
+
+5. Checking namespace (Letter and Word Controller). 
+
+6. Dictionary namespace;
+
+7. Scoring namespace for calculating score based on different word sizes;  
+
+8. Timer namespace with atomic fields for tracking passed game time; 
+
+9. Partial drawing namespace (include Letter position, Inserted letter, part-Drawn letters, Generator in future);
+
+10. Message Controller namespace, for future integration with Engine classes.
+
 
 # What is new
 
-1. Added Messsage controller namespace. It is pipe between Message views and Message Engine(will be added in future)
-2. Time namespace for storing game clock model data.
-3. Dictionary namespace for including:
-   a) Word class- I used defrecord function to create class(it is represented as map) and contructor
-      function for creating object of this type. 
-   b) Dictionary model- It is represented as map of Word objects. Using initialize function will
-      import Repository namespace and import dictionary from file system.
-4. Drawing namespace - we have following abstactions:
-   1. Letter position - for keeping records of current drawing letter index - DONE
-   2. Inserted letter - model for storing entered letters - DONE
-   3. Drawn letter - model for storing drawn letters - Partly done
-   4. Generator - TODO
-5. Controlling namespace - two main functionality includes:
-   a) Controlling letters - checking for correctness of the letters entries entered by player.
-   b) Controlling word - checking for semantic correctness of the word entries entered by player with available dictionary .
+ Converted serbian to english code. It includes all method and variable names, comment section, namespaces and packages. 
+
    
 
 **All classes are tested in REPL and using main java function.
+
+# What I learned
+
+1. Function style programming- More got used to it, little slower then i thought :). Used a lot clojure.core, clojure.string and clojure.data functions, and
+   wrote my owns, with help of loop/recur and map functions.
+2. Namespaces - same as Java packages. They are excellent organizing tool used for importing java and clojure built in libraries, and using you own ones.
+3. Java interoperability - As language who runs on JVM, Clojure have great ways for creating objects, classes, contructors, using java's standard 
+   and static methods and for more sophisticated features like interfaces and polymorphism.
+4. Clojure's Swing integration
+5. Atoms - great concept for storing state of objects. It can be changed/modified with swap! and reset! function. 
+
+* I found cycle dependency problem in my original code between Repository namespace(SlovaRepository class) and Konvertovanja namespace (KonvertorRec). 
+  Dependency is removed from Repository namespace, and transfered to future Message Engine namespace.
 
 
 ## Testing it out

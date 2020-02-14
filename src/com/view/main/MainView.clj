@@ -5,106 +5,105 @@
         '(java.awt.event ActionListener KeyListener MouseListener))
 
 (defn swing []
-  (let [polja  [(JTextField.) (JTextField.) (JTextField.) (JTextField.) (JTextField.) (JTextField.)
+  (let [fields  [(JTextField.) (JTextField.) (JTextField.) (JTextField.) (JTextField.) (JTextField.)
                 (JTextField.) (JTextField.) (JTextField.) (JTextField.) (JTextField.) (JTextField.)]
-        zaustavi (JButton. "ZAUSTAVI")
-        ocisti (JButton. "OČISTI")
-        potvrdirec (JButton. "POTVRDI")
-        vreme (JTextField.)
-        unosenje (JTextField. "Unesite pronađenu reč na ćirilici")
-        vremelabela (JLabel. "Vreme:               " SwingConstants/RIGHT)
-        frame (JFrame. "Slagalica")
-        centar (BorderLayout. 10 10)
-        gore (JPanel. (BorderLayout. 10 10))
-        levo (JPanel. (BorderLayout. 10 10))
-        desno (JPanel. (BorderLayout. 10 10))
-        dole (JPanel. (BorderLayout. 10 10))
+        stopButton (JButton. "STOP")
+        clearButton (JButton. "CLEAR")
+        confirmButton (JButton. "CONFIRM")
+        timeField (JTextField.)
+        insertField (JTextField. "Insert serbian word in cyrillic")
+        timeLabel (JLabel. "Time:               " SwingConstants/RIGHT)
+        frame (JFrame. "Puzzle")
+        center (BorderLayout. 10 10)
+        upper (JPanel. (BorderLayout. 10 10))
+        left (JPanel. (BorderLayout. 10 10))
+        right (JPanel. (BorderLayout. 10 10))
+        down (JPanel. (BorderLayout. 10 10))
 
         flow (JPanel. (FlowLayout. FlowLayout/RIGHT 10 5))
-        dugmici (JPanel. (GridLayout. 1 2 10 10))
-        textovi (JPanel. (GridLayout. 0 12 10 10))]
+        buttons (JPanel. (GridLayout. 1 2 10 10))
+        texts (JPanel. (GridLayout. 0 12 10 10))]
 
 
-    ;;**************************************GENERICKI**************************************
+    ;;**************************************GENERICS**************************************
 
-    (defn postaviFont
-      "Postavlja definisani font na definisanu komponentu"
-      [komponenta fontname fonttype velicina]
-      (.setFont komponenta (Font. fontname fonttype velicina))
+    (defn setCustomFont
+      "Setting defined font on defined component"
+      [component fontname fonttype size]
+      (.setFont component (Font. fontname fonttype size))
       )
 
 
-    (defn velicinaKomponente
-      "Postavljanje velicina Komponenti"
-      [komponenta i j]
-      (.setPreferredSize komponenta (Dimension. i j))
+    (defn setComponentSize
+      "Setting component's size"
+      [component i j]
+      (.setPreferredSize component (Dimension. i j))
       )
 
-    ;;**************************************SLOVA**************************************
+    ;;**************************************LETTERS**************************************
 
-    (defn zakljucajTextPolja []
+    (defn lockTextField []
       (doseq [x (range 0 12)]
-        (.setEditable (.get polja x) false)
+        (.setEditable (.get fields x) false)
         )
       )
 
-    (defn dodajPoljaNaPanel []
+    (defn addFieldToPanel []
       (doseq [x (range 0 12)]
-        (.add textovi (.get polja x))
+        (.add texts (.get fields x))
        )
     )
 
-    (defn postaviVelicinuPolja []
+    (defn setFieldsSize []
       (doseq [x (range 0 12)]
-        (velicinaKomponente (.get polja x) 90 90)
+        (setComponentSize (.get fields x) 90 90)
         )
       )
 
-    (defn postaviTextNaPoljeSlova [index text]
-      (.setText (.get polja index) text)
+    (defn addTextToField [index text]
+      (.setText (.get fields index) text)
       )
 
-    (defn pregledajTextPrethodnogPoljaSlova [trenutniIndex]
-      (if (<= trenutniIndex 0)
+    (defn inspectTextPreviousField [currentIndex]
+      (if (<= currentIndex 0)
         ""
-        (.getText (.get polja (- trenutniIndex 1)))
+        (.getText (.get fields (- currentIndex 1)))
         )
       )
 
-    (defn postaviFormatTextaPolja []
+    (defn setFormatField []
       (doseq [x (range 0 12)]
-        (doto (.get polja x)
+        (doto (.get fields x)
           (.setFont (Font. Font/SERIF, Font/BOLD, 25))
           (.setForeground (Color. 0 0 0))
           (.setHorizontalAlignment JTextField/CENTER)
           (.setBackground Color/WHITE)
-
           )
         )
       )
 
-    (defn postaviBojuPolja [boja]
+    (defn setColorField [color]
       (doseq [x (range 0 12)]
-        (.setBackground (.get polja x) boja)
+        (.setBackground (.get fields x) color)
         )
       )
 
-    ;;**************************************VREME**************************************
+    ;;**************************************TIME**************************************
 
-    (defn ocistiVreme []
-      (.setText vreme "")
+    (defn clearTime []
+      (.setText timeField "")
       )
 
-    (defn postaviVreme [text]
-      (.setText vreme text)
+    (defn setTime [text]
+      (.setText timeField text)
       )
 
-    (defn zakljucajTextVremena []
-      (.setEditable vreme false)
+    (defn lockTextTime []
+      (.setEditable timeField false)
       )
 
-    (defn postaviFormatVremena []
-      (doto vreme
+    (defn setFormatTime []
+      (doto timeField
         (.setFont (Font. Font/SERIF, Font/BOLD, 25))
         (.setForeground (Color. 0 0 0))
         (.setHorizontalAlignment JTextField/CENTER)
@@ -112,34 +111,34 @@
         )
       )
 
-    ;;**************************************UNOSENJE**************************************
+    ;;**************************************INSERT**************************************
 
-    (defn vratiUnesenText []
-      (.getText unosenje)
+    (defn getInsertedText []
+      (.getText insertField)
       )
 
-    (defn postaviUnesenText [text]
-      (.setText unosenje text)
+    (defn setInsertedText [text]
+      (.setText insertField text)
       )
 
-    (defn postaviFormatUnosenjaReci []
-      (doto unosenje
+    (defn setInsertedFormat []
+      (doto insertField
         (.setFont (Font. Font/SERIF, Font/ITALIC, 20))
         (.setHorizontalAlignment JTextField/CENTER)
         )
       )
 
-    (defn postaviFormatUnosenjaReci2 []
-      (doto unosenje
+    (defn setInsertedFormat2 []
+      (doto insertField
         (.setFont (Font. Font/SERIF, Font/PLAIN, 20))
         (.setHorizontalAlignment JTextField/CENTER)
         )
       )
 
-    ;;**************************************LISTENERI**************************************
+    ;;**************************************LISTENERS**************************************
 
-    (defn postaviZaustaviOsluskivac []
-      (.addActionListener zaustavi
+    (defn addStopListener []
+      (.addActionListener stopButton
          (proxy [ActionListener] []
            (actionPerformed [e] (println "Hello")
              )
@@ -147,86 +146,86 @@
        )
     )
 
-    (defn postaviZaustaviOsluskivac [^ActionListener zaustaviOsluskivac]
-      (.addActionListener zaustavi zaustaviOsluskivac)
+    (defn setStopListener [^ActionListener stopListener]
+      (.addActionListener stopButton stopListener)
       )
 
-    (defn postaviOcistiOsluskivac [^ActionListener ocistiOsluskivac]
-      (.addActionListener ocisti ocistiOsluskivac)
+    (defn setClearListener [^ActionListener clearListener]
+      (.addActionListener clearButton clearListener)
       )
 
-    (defn postaviPotvrdiRecOsluskivac [^ActionListener potvrdiRecOsluskivac]
-      (.addActionListener potvrdirec potvrdiRecOsluskivac)
+    (defn setConfirmListener [^ActionListener confirmListener]
+      (.addActionListener confirmButton confirmListener)
       )
 
-    (defn postaviPotvrdiRecOsluskivac [^MouseListener unosenjeMouseOsluskivac]
-      (.addMouseListener unosenje unosenjeMouseOsluskivac)
+    (defn setConfirmListener [^MouseListener insertMouseListener]
+      (.addMouseListener insertField insertMouseListener)
       )
 
-    (defn postaviPotvrdiRecOsluskivac [^KeyListener unosenjeKeyOsluskivac]
-      (.addKeyListener unosenje unosenjeKeyOsluskivac)
+    (defn setConfirmListener [^KeyListener insertKeyListener]
+      (.addKeyListener insertField insertKeyListener)
       )
 
 
     (doto frame
       (.setSize 700 300)
       (.setLocationRelativeTo nil)
-      (.setLayout centar)
+      (.setLayout center)
       (-> .getContentPane (.setSize 222 222))
       )
-    ;;****************SLOVA**********************
-    (postaviVelicinuPolja)
-    (zakljucajTextPolja)
-    (postaviFormatTextaPolja)
+    ;;****************LETTERS**********************
+    (setFieldsSize)
+    (lockTextField)
+    (setFormatField)
 
-    ;;****************VELICINE**********************
-    (velicinaKomponente zaustavi 90 90)
-    (velicinaKomponente ocisti 90 90)
-    (velicinaKomponente vreme 90 90)
-    (velicinaKomponente unosenje 560 27)
+    ;;****************SIZE**********************
+    (setComponentSize stopButton 90 90)
+    (setComponentSize clearButton 90 90)
+    (setComponentSize timeField 90 90)
+    (setComponentSize insertField 560 27)
 
     ;;****************FONT********************/
-    (postaviFont zaustavi Font/SERIF Font/BOLD 17)
-    (postaviFont ocisti Font/SERIF Font/BOLD 17)
+    (setCustomFont stopButton Font/SERIF Font/BOLD 17)
+    (setCustomFont clearButton Font/SERIF Font/BOLD 17)
 
-    ;;****************FORMATI********************
-    (zakljucajTextVremena)
-    (postaviFormatVremena)
-    (postaviFormatUnosenjaReci)
-    (.setEnabled potvrdirec false)
-    (.setEnabled unosenje false)
-    ;;zabranjujem copy i paste
-    (.setTransferHandler unosenje nil)
+    ;;****************FORMATS********************
+    (lockTextTime)
+    (setFormatTime)
+    (setInsertedFormat)
+    (.setEnabled confirmButton false)
+    (.setEnabled insertField false)
+    ;;forbidding copy and paste
+    (.setTransferHandler insertField nil)
 
-    (doto dugmici
-      (.add zaustavi)
-      (.add ocisti))
+    (doto buttons
+      (.add stopButton)
+      (.add clearButton))
 
-    (dodajPoljaNaPanel)
+    (addFieldToPanel)
 
-    (.add desno vreme)
-    (.add gore vremelabela)
+    (.add right timeField)
+    (.add upper timeLabel)
 
     (doto flow
-      (.add unosenje)
-      (.add potvrdirec))
+      (.add insertField)
+      (.add confirmButton))
 
-    (doto dole
-      (.add textovi)
+    (doto down
+      (.add texts)
       (.add flow BorderLayout/SOUTH)
       )
 
     (doto frame
-      ;;(.setSize 700 300)
-      ;(.setLocationRelativeTo nil)
-      ;(.setLayout centar)
-      ;(-> .getContentPane (.setSize 222 222))
+      (.setSize 700 300)
+      (.setLocationRelativeTo nil)
+      (.setLayout center)
+      (-> .getContentPane (.setSize 222 222))
 
-      (.add dugmici BorderLayout/CENTER)
-      (.add dole BorderLayout/SOUTH)
-      (.add gore BorderLayout/NORTH)
-      (.add levo BorderLayout/WEST)
-      (.add desno BorderLayout/EAST)
+      (.add buttons BorderLayout/CENTER)
+      (.add down BorderLayout/SOUTH)
+      (.add upper BorderLayout/NORTH)
+      (.add left BorderLayout/WEST)
+      (.add right BorderLayout/EAST)
 
       (.setDefaultCloseOperation JFrame/EXIT_ON_CLOSE)
       (.setVisible true))
