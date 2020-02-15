@@ -7,7 +7,7 @@
   :repl-options {:init-ns puzzle.core}
   :codeina {:sources ["src/com"]
             :reader :clojure
-            :target "docs/api"
-            :src-uri "http://github.com/IvanVanco/PuzzleInClojure/docs/api/"
+            :target "docs"
+            :src-uri "http://github.com/IvanVanco/PuzzleInClojure/docs"
             }
   )
