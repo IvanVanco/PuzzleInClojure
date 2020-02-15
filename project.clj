@@ -6,5 +6,8 @@
   :dependencies [[org.clojure/clojure "1.10.0"]]
   :repl-options {:init-ns puzzle.core}
   :codeina {:sources ["src/com"]
-            :reader :clojure}
-  :src-uri "http://github.com/IvanVanco/PuzzleInClojure/docs/api/")
+            :reader :clojure
+            :target "docs/api"
+            :src-uri "http://github.com/IvanVanco/PuzzleInClojure/docs/api/"
+            }
+  )
