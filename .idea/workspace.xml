@@ -7,9 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Slagalica ver7" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Clojure Test Namespace" />
         <option value="Clojure Namespace" />
       </list>
     </option>
@@ -24,6 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="cursive.last.file.extension.C\:/Users/Ivan/Desktop/Slagalica Clojure/Slagalica ver1/fonclojure/src" value="clj" />
     <property name="cursive.last.file.extension.C\:/Users/ivanm/IdeaProjects/fonclojure/src" value="clj" />
+    <property name="cursive.last.file.extension.D\:/User files/Desktop/Slagalica Clojure/Slagalica ver7/src" value="clj" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -42,11 +47,11 @@
       <recent name="C:\Users\ivanm\IdeaProjects\fonclojure\src\data" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1578930683794">{:repl-history {:ide [], :local [{:command &quot;(ns swing\n  (:import [javax.swing JFrame JLabel JButton]\n           [java.awt.event WindowListener]))\n\n(defn swing []\n  (let [frame (JFrame. \&quot;Fund manager\&quot;)\n        label (JLabel. \&quot;Exit on close\&quot;)]\n    (doto frame\n      (.add label)\n      (.setDefaultCloseOperation JFrame/EXIT_ON_CLOSE)\n      (.addWindowListener\n        (proxy [WindowListener] []\n          (windowClosing [evt]\n            (println \&quot;Whoop\&quot;))))\n      (.setVisible true))))\n\n(defn -main [&amp; args]\n  (swing))&quot;, :offset 473, :ns &quot;fonclojure.core&quot;} {:command &quot;-main&quot;, :offset 5, :ns &quot;swing&quot;} {:command &quot;\n(defn lenght [obj] (.length obj))&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(lenght \&quot;ara\&quot;)&quot;, :offset 14, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      )\n\n    (if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n      (* korisnikduzina 3)\n      )\n    )\n  )&quot;, :offset 415, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnikcic\&quot;)&quot;, :offset 36, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Koris\&quot;)&quot;, :offset 30, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      )\n\n    (if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n      (* korisnikduzina 3)\n      )\n\n    (* korisnikduzina 2)\n\n    )\n  )&quot;, :offset 442, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajde\&quot; \&quot;ajde\&quot;)&quot;, :offset 25, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajde\&quot; \&quot;ajdeg\&quot;)&quot;, :offset 26, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajde\&quot; \&quot;ajdeggtg\&quot;)&quot;, :offset 29, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajdee\&quot; \&quot;ajdeggtg\&quot;)&quot;, :offset 30, :ns &quot;fonclojure.core&quot;} {:command &quot;(= (lenght \&quot;Korisnik\&quot;) (lenght \&quot;Korisnik\&quot;))&quot;, :offset 43, :ns &quot;fonclojure.core&quot;} {:command &quot;(= \&quot;Korisnik\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 25, :ns &quot;fonclojure.core&quot;} {:command &quot;(if (and (= (lenght \&quot;Korisnik\&quot;) (lenght \&quot;Korisnik\&quot;)) (= \&quot;Korisnik\&quot; \&quot;Korisnik\&quot;))\n  (+ (* (lenght \&quot;Korisnik\&quot;) 2) 5)\n  )&quot;, :offset 117, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      ((if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n         (* korisnikduzina 3)\n         (* korisnikduzina 2)\n         ))\n      )\n    )\n  )&quot;, :offset 454, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnikk\&quot;)&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Estehhhh\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 33, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      (if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n        (* korisnikduzina 3)\n        (* korisnikduzina 2)\n        )\n      )\n    )\n  )&quot;, :offset 449, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnikg\&quot;)&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnikk\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisni\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 32, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 33, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnic\&quot;)&quot;, :offset 33, :ns &quot;fonclojure.core&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1581719298490">{:repl-history {:ide [], :local [{:command &quot;(ns swing\n  (:import [javax.swing JFrame JLabel JButton]\n           [java.awt.event WindowListener]))\n\n(defn swing []\n  (let [frame (JFrame. \&quot;Fund manager\&quot;)\n        label (JLabel. \&quot;Exit on close\&quot;)]\n    (doto frame\n      (.add label)\n      (.setDefaultCloseOperation JFrame/EXIT_ON_CLOSE)\n      (.addWindowListener\n        (proxy [WindowListener] []\n          (windowClosing [evt]\n            (println \&quot;Whoop\&quot;))))\n      (.setVisible true))))\n\n(defn -main [&amp; args]\n  (swing))&quot;, :offset 473, :ns &quot;fonclojure.core&quot;} {:command &quot;-main&quot;, :offset 5, :ns &quot;swing&quot;} {:command &quot;\n(defn lenght [obj] (.length obj))&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(lenght \&quot;ara\&quot;)&quot;, :offset 14, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      )\n\n    (if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n      (* korisnikduzina 3)\n      )\n    )\n  )&quot;, :offset 415, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnikcic\&quot;)&quot;, :offset 36, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Koris\&quot;)&quot;, :offset 30, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      )\n\n    (if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n      (* korisnikduzina 3)\n      )\n\n    (* korisnikduzina 2)\n\n    )\n  )&quot;, :offset 442, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajde\&quot; \&quot;ajde\&quot;)&quot;, :offset 25, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajde\&quot; \&quot;ajdeg\&quot;)&quot;, :offset 26, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajde\&quot; \&quot;ajdeggtg\&quot;)&quot;, :offset 29, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Ajdee\&quot; \&quot;ajdeggtg\&quot;)&quot;, :offset 30, :ns &quot;fonclojure.core&quot;} {:command &quot;(= (lenght \&quot;Korisnik\&quot;) (lenght \&quot;Korisnik\&quot;))&quot;, :offset 43, :ns &quot;fonclojure.core&quot;} {:command &quot;(= \&quot;Korisnik\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 25, :ns &quot;fonclojure.core&quot;} {:command &quot;(if (and (= (lenght \&quot;Korisnik\&quot;) (lenght \&quot;Korisnik\&quot;)) (= \&quot;Korisnik\&quot; \&quot;Korisnik\&quot;))\n  (+ (* (lenght \&quot;Korisnik\&quot;) 2) 5)\n  )&quot;, :offset 117, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      ((if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n         (* korisnikduzina 3)\n         (* korisnikduzina 2)\n         ))\n      )\n    )\n  )&quot;, :offset 454, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnikk\&quot;)&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Estehhhh\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 33, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn bodovanje [korisnikrec kompjuterrec]\n  (let [korisnikduzina (lenght korisnikrec)\n        kompjuterduzina (lenght kompjuterrec)\n        bodovi (* korisnikduzina 2)]\n    (if (and (= korisnikduzina kompjuterduzina) (= korisnikrec kompjuterrec))\n      (+ (* korisnikduzina 2) 5)\n      (if (and (= korisnikduzina kompjuterduzina) (not= korisnikrec kompjuterrec))\n        (* korisnikduzina 3)\n        (* korisnikduzina 2)\n        )\n      )\n    )\n  )&quot;, :offset 449, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnikg\&quot;)&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnikk\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisni\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 32, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnik\&quot;)&quot;, :offset 33, :ns &quot;fonclojure.core&quot;} {:command &quot;(bodovanje \&quot;Korisnik\&quot; \&quot;Korisnic\&quot;)&quot;, :offset 33, :ns &quot;fonclojure.core&quot;} {:command &quot;(ns data.RecnikRepository\n  (:require [clojure.java.io :as io] ))\n\n(with-open [rdr (io/reader \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot;)]\n  (doall (map my-func (line-seq rdr))))&quot;, :offset 171, :ns &quot;fonclojure.core&quot;} {:command &quot;(with-open [rdr (clojure.java.io/reader \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot;)]\n  (reduce conj [] (line-seq rdr)))&quot;, :offset 112, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/as-file \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot;)&quot;, :offset 48, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/make-reader (io/as-file \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot;))&quot;, :offset 65, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/make-output-stream true \&quot;UTF-16\&quot;)&quot;, :offset 37, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/make-output-stream :append true \&quot;UTF-16\&quot;)&quot;, :offset 45, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/make-output-stream \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; true \&quot;UTF-16\&quot;)&quot;, :offset 73, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/make-output-stream \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;)&quot;, :offset 68, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(def stream io/make-output-stream \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;)&quot;, :offset 79, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(def stream (io/make-output-stream \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;) )&quot;, :offset 82, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(stream)&quot;, :offset 8, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(def stream (io/make-input-stream \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;) )&quot;, :offset 81, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(println stream)&quot;, :offset 16, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/make-reader \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;)&quot;, :offset 61, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(def reader1 (io/make-reader \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;))  &quot;, :offset 75, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(reader1)&quot;, :offset 9, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/input-stream (java.io.File. \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;) :encoding \&quot;UTF-16\&quot;)&quot;, :offset 97, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/input-stream (java.io.File. \&quot;\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;) :encoding \&quot;UTF-16\&quot;)\n&quot;, :offset 96, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(io/input-stream (java.io.File. \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; \&quot;UTF-16\&quot;) :encoding \&quot;UTF-16\&quot;)\n&quot;, :offset 97, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(slurp \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot;)&quot;, :offset 43, :ns &quot;data.RecnikRepository&quot;} {:command &quot;(slurp \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; :encoding \&quot;UTF-16\&quot;)&quot;, :offset 62, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn Example []\n  (with-open [rdr (clojure.java.io/reader \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot;)]\n    (reduce conj [] (line-seq rdr))))\n(Example)&quot;, :offset 144, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn Example []\n  (with-open [rdr (clojure.java.io/reader \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; :encoding \&quot;UTF-16\&quot;)]\n    (reduce conj [] (line-seq rdr))))\n(Example)&quot;, :offset 163, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn recnikinicijalizacija []\n  (memoize(with-open [rdr (clojure.java.io/reader \&quot;.\\\\resources\\\\Recnik cirilica.txt\&quot; :encoding \&quot;UTF-16\&quot;)]\n            (reduce conj [] (line-seq rdr)))\n          )\n  )\n(recnikinicijalizacija)&quot;, :offset 222, :ns &quot;fonclojure.core&quot;} {:command &quot;(println (recnikinicijalizacija ))&quot;, :offset 34, :ns &quot;fonclojure.core&quot;} {:command &quot;(recnikinicijalizacija)&quot;, :offset 23, :ns &quot;fonclojure.core&quot;} {:command &quot;(Example)&quot;, :offset 9, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn Example []\n  (with-open [w (clojure.java.io/writer \&quot;.\\\\resources\\\\Supervizija.txt\&quot; :append true)]\n    (.write w (str \&quot;hello\&quot; \&quot;world\&quot;))))\n(Example)&quot;, :offset 152, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn Example []\n  (with-open [w (clojure.java.io/writer \&quot;.\\\\resources\\\\Supervizija.txt\&quot; :append true :encoding \&quot;UTF-16\&quot; )]\n    (.write w (str \&quot;hello\&quot; \&quot;world\&quot;))))\n(Example)&quot;, :offset 172, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn sacuvaj [rec]\n  (with-open [w (clojure.java.io/writer \&quot;.\\\\resources\\\\Supervizija.txt\&quot; :append true :encoding \&quot;UTF-16\&quot; )]\n    (.write w rec)))&quot;, :offset 147, :ns &quot;fonclojure.core&quot;} {:command &quot;(sacuvaj \&quot;pozdracv\&quot;)&quot;, :offset 20, :ns &quot;fonclojure.core&quot;} {:command &quot;(sacuvaj \&quot;pozdracvdsad\&quot;)&quot;, :offset 24, :ns &quot;fonclojure.core&quot;} {:command &quot;(defn sacuvaj [rec]\n  (with-open [w (clojure.java.io/writer \&quot;.\\\\resources\\\\Supervizija.txt\&quot; :append true :encoding \&quot;UTF-16\&quot; )]\n    (.write w (str \&quot;\\n\&quot; rec) )))&quot;, :offset 159, :ns &quot;fonclojure.core&quot;} {:command &quot;(sacuvaj \&quot;pozdrav\&quot;)&quot;, :offset 19, :ns &quot;fonclojure.core&quot;} {:command &quot;(sacuvaj \&quot;pozdravds\&quot;)&quot;, :offset 21, :ns &quot;fonclojure.core&quot;}], :remote []}}</component>
   <component name="RunManager" selected="Clojure REPL.localrepl">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="fonclojure" />
+      <module name="Puzzle" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -54,7 +59,6 @@
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
-      <module name="" />
       <setting name="jvmArgs" value="" />
       <setting name="parameters" value="" />
       <setting name="workingDir" value="" />
@@ -69,11 +73,10 @@
       <setting name="replType" value="NREPL" />
       <setting name="configType" value="SPECIFY" />
       <setting name="fixLineNumbers" value="false" />
-      <module name="" />
       <method v="2" />
     </configuration>
     <configuration name="localrepl" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
-      <module name="fonclojure" />
+      <module name="Puzzle" />
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
       <setting name="jvmArgs" value="" />
@@ -84,10 +87,10 @@
       <setting name="fixLineNumbers" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="fonclojure.core" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="fonclojure" />
+    <configuration name="com.view.main.MainView" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="Puzzle" />
       <setting name="path" value="" />
-      <setting name="namespace" value="fonclojure.core" />
+      <setting name="namespace" value="com.view.main.MainView" />
       <setting name="execution" value="INTELLIJ" />
       <setting name="profiles" value="" />
       <setting name="aliases" value="" />
@@ -96,8 +99,20 @@
       <setting name="workDir" value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="com.view.message.MessageView" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="Puzzle" />
+      <setting name="path" value="$PROJECT_DIR$/src/com/view/message/MessageView.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/com/view/message" />
+      <method v="2" />
+    </configuration>
     <configuration name="model.bodovanje.bod" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="fonclojure" />
+      <module name="Puzzle" />
       <setting name="path" value="" />
       <setting name="namespace" value="model.bodovanje.bod" />
       <setting name="execution" value="INTELLIJ" />
@@ -108,22 +123,10 @@
       <setting name="workDir" value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="view.example" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="fonclojure" />
+    <configuration name="view.main.mainview" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="Puzzle" />
       <setting name="path" value="" />
-      <setting name="namespace" value="view.example" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="view.mainview" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="fonclojure" />
-      <setting name="path" value="" />
-      <setting name="namespace" value="view.mainview" />
+      <setting name="namespace" value="view.main.mainview" />
       <setting name="execution" value="INTELLIJ" />
       <setting name="profiles" value="" />
       <setting name="aliases" value="" />
@@ -134,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Clojure Application.com.view.main.MainView" />
+        <item itemvalue="Clojure Application.com.view.message.MessageView" />
+        <item itemvalue="Clojure Application.view.main.mainview" />
         <item itemvalue="Clojure Application.model.bodovanje.bod" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Clojure Application.view.mainview" />
-        <item itemvalue="Clojure Application.view.example" />
-        <item itemvalue="Clojure Application.fonclojure.core" />
       </list>
     </recent_temporary>
   </component>
@@ -168,37 +171,120 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="72" key="#Code_Folding" timestamp="1578918256040">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="658" y="229" key="#Code_Folding" timestamp="1579458157656">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="72" key="#Code_Folding/0.0.1536.824@0.0.1536.824" timestamp="1578918256040" />
+    <state x="658" y="229" key="#Code_Folding/0.0.1920.1040@0.0.1920.1040" timestamp="1579458157656" />
+    <state x="361" y="244" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581703161793">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="361" y="244" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581703161793" />
+    <state x="646" y="226" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1579457801512">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="646" y="226" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579457801512" />
+    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581697142655">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581697142655" />
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578925301742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1578925301742" />
-    <state width="1342" height="137" key="GridCell.Tab.0.bottom" timestamp="1578930683625">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="137" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578930683625" />
-    <state width="1877" height="208" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578852158336" />
-    <state width="1342" height="137" key="GridCell.Tab.0.center" timestamp="1578930683625">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="137" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578930683625" />
-    <state width="1877" height="208" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578852158336" />
-    <state width="1342" height="137" key="GridCell.Tab.0.left" timestamp="1578930683625">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="137" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578930683625" />
-    <state width="1877" height="208" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578852158336" />
-    <state width="1342" height="137" key="GridCell.Tab.0.right" timestamp="1578930683625">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="137" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578930683625" />
-    <state width="1877" height="208" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578852158336" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1578852035346">
+    <state x="587" y="46" key="#localrepl" timestamp="1581702509879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578852035346" />
+    <state x="587" y="46" key="#localrepl/0.0.1920.1040@0.0.1920.1040" timestamp="1581702509879" />
+    <state width="1580" height="168" key="GridCell.Tab.0.bottom" timestamp="1581704346102">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="137" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581688401285" />
+    <state width="1580" height="168" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581704346102" />
+    <state width="1580" height="168" key="GridCell.Tab.0.center" timestamp="1581704346102">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="137" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581688401285" />
+    <state width="1580" height="168" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581704346102" />
+    <state width="1580" height="168" key="GridCell.Tab.0.left" timestamp="1581704346101">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="137" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581688401285" />
+    <state width="1580" height="168" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581704346101" />
+    <state width="1580" height="168" key="GridCell.Tab.0.right" timestamp="1581704346102">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1493" height="137" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581688401285" />
+    <state width="1580" height="168" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581704346102" />
+    <state x="440" y="95" key="SettingsEditor" timestamp="1579202673251">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579202673251" />
+    <state x="713" y="265" key="cursive.new.repl.command.dialog.dimension" timestamp="1579458225048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="713" y="265" key="cursive.new.repl.command.dialog.dimension/0.0.1920.1040@0.0.1920.1040" timestamp="1579458225048" />
+    <state x="277" y="239" key="new project wizard" timestamp="1581702998713">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="277" y="239" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1581702998713" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1579437409727">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579437409727" />
+    <state x="611" y="225" width="696" height="678" key="search.everywhere.popup" timestamp="1578942342290">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="611" y="225" width="696" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578942342290" />
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
   </component>
 </project>

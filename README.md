@@ -3,7 +3,7 @@ Simulation of the Serbian game called Slagalica,
 where player chooses 12 letters of an alphabet from random generator, and then
 during the specific time, they need to make longest word to win.
 
-# Project documentation
+# Project structure
 
 1. Main view namespace with main window; 
 
@@ -25,12 +25,21 @@ during the specific time, they need to make longest word to win.
 
 10. Message Controller namespace, for future integration with Engine classes.
 
+11. Documentation - find on https://ivanvanco.github.io/PuzzleInClojure/
+
 
 # What is new
 
- Converted serbian to english code. It includes all method and variable names, comment section, namespaces and packages. 
+ 1. API Documentation - on https://ivanvanco.github.io/PuzzleInClojure/
 
-   
+ 2. Added external library support for creating documentation.
+    Find more info on this link https://github.com/funcool/codeina 
+ 
+ 3. Changed project's name to Puzzle 
+ 
+ 4. Fixes in MessageView namespace
+
+
 
 **All classes are tested in REPL and using main java function.
 
@@ -42,7 +51,9 @@ during the specific time, they need to make longest word to win.
 3. Java interoperability - As language who runs on JVM, Clojure have great ways for creating objects, classes, contructors, using java's standard 
    and static methods and for more sophisticated features like interfaces and polymorphism.
 4. Clojure's Swing integration
-5. Atoms - great concept for storing state of objects. It can be changed/modified with swap! and reset! function. 
+5. Atoms - great concept for storing state of objects. It can be changed/modified with swap! and reset! function.
+6. Lein User Profiles.clj - added documentation library support and configuration globally
+7. Creating dynamic documentation using 3rd party libries 
 
 * I found cycle dependency problem in my original code between Repository namespace(SlovaRepository class) and Konvertovanja namespace (KonvertorRec). 
   Dependency is removed from Repository namespace, and transfered to future Message Engine namespace.

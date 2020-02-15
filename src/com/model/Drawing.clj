@@ -1,57 +1,79 @@
 (ns com.model.Drawing
+  "Abstraction of letter drawing process in game"
   (:require [com.model.Converting :as convertor :refer [convertorSmallWord]]
             [com.data.Repository :as letters]
             [clojure.string :as s]))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; Letter position;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(def ^:atom position (atom 0))
 
-;;;;;;;;;;;;;;;Letter position;;;;;;;;;;;;;;;;;;;;;;;;;
-(def position (atom 0))
-
-(defn increasePosition []
+(defn increasePosition
+  "Increase current drawing letter index."
+  []
   (swap! position + 1)
   )
 
-(defn decreasePosition []
+(defn decreasePosition
+  "Decrease current drawing letter index."
+  []
   (swap! position - 1)
   )
 
-(defn setPosition [pos]
+(defn setPosition
+  "Set current drawing letter index."
+  [pos]
   (compare-and-set! position @position pos)
   )
 
-;;;;;;;;;;;;;;;Inserted letter;;;;;;;;;;;;;;;;;;;;;;;;;
-(def insertedletters (atom []))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; Inserted letter;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(def ^:atom insertedletters (atom []))
 
-(defn getInsertedLetters []
+(defn getInsertedLetters
+  "Inserted letters Getter."
+  []
   @insertedletters
   )
 
-(defn clearAllInsertedLettersSeq [index]
+(defn clearAllInsertedLettersSeq
+  "Clearing inserted vector of letters. It is used when we click on Clear button."
+  [index]
   (if (< index 12 )
     (reset! insertedletters [])
     )
   )
 
-(defn fillInsertedLettersSeq [index letter]
+(defn fillInsertedLettersSeq
+  "Inserting drawn letter at index."
+  [index letter]
   (swap!
     insertedletters
     assoc index letter)
   )
 
-(defn clearInsertedLettersSeq [index]
+(defn clearInsertedLettersSeq
+  "Clearing drawn letter from vector at index parameter."
+  [index]
   (swap!
     insertedletters
     assoc index "")
   )
 
-(defn makeWrongInsertedWord []
-  "Returning String word from builted inserted letters"
+(defn makeWrongInsertedWord
+  "Returning String word from builted inserted letters."
+  []
   (let [conversion (mapv convertor/convertorBigWord (first @insertedletters))]
     (apply str conversion)
     )
   )
 
-(defn fillSeqWithInsertedWord [word]
+(defn fillSeqWithInsertedWord
+  "Used to fill inserted letters vector, when letters are drawn.
+  It is also using converting namespace function convertorBigWord."
+  [word]
   (reset! insertedletters [])
   (let [conversion (convertor/convertorBigWord word)]
     (swap!
@@ -62,14 +84,19 @@
       )
     )
   )
-;;;;;;;;;;;;;TODO Drawn letters;;;;;;;;;;;;;;;;;;;;;;;;
 
-(def drawnletters (atom []))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; TODO Drawn letters;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(def drawnlettersmap (atom [{}]))
+(def ^:atom drawnletters (atom []))
+
+(def ^:atom drawnlettersmap (atom [{}]))
 
 
-(defn initializationLettersMap []
+(defn initializationLettersMap
+  "Used to create starter map of letter and number of appearance."
+  []
   (loop [x 0
          acc []]
     (if (> x (- (count letters/cyrillic) 1))
@@ -84,21 +111,29 @@
     )
   )
 
-(defn getDrawnLetterMap []
+(defn getDrawnLetterMap
+  "Drawn letter map Getter."
+  []
   @drawnlettersmap
   )
 
-(defn getDrawnLetters []
+(defn getDrawnLetters
+  "Drawn letters Getter."
+  []
   @drawnletters
   )
 
-(defn clearDrawnLettersSeq []
+(defn clearDrawnLettersSeq
+  "Additional function call when we trigger Clear button."
+  []
   (initializationLettersMap)
   (reset! drawnletters [])
   )
 
 
-(defn fillDrawnLettersSeq [fields]
+(defn fillDrawnLettersSeq
+  "Filling letters of word using tail optimised recursion call."
+  [fields]
   (loop [x 0
          acc []]
     (if (> x (- (.length fields) 1))
@@ -115,4 +150,6 @@
 
 
 
-;;;;;;;;;;;;;TODO Generator;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; TODO Generator;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;

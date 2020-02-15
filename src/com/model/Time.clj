@@ -1,23 +1,30 @@
-(ns com.model.Time)
+(ns com.model.Time
+  "For storing game clock model data")
 
 
-(def seconds (atom 90))
+(def ^:atom seconds (atom 90))
 
-(def LAST_SECONDS 0)
+(def ^:constant LAST_SECONDS 0)
 
-(def isWorking (atom false))
+(def ^:atom isWorking (atom false))
 
 
 
-(defn setSecond [second]
+(defn setSecond
+  "Setter seconds on clock."
+  [second]
   (compare-and-set! seconds @seconds second)
 )
 
-(defn setTimer [issWorking]
+(defn setTimer
+  "Setting clock to on or off."
+  [issWorking]
   (compare-and-set! isWorking @isWorking issWorking)
 )
 
-(defn reduceSecond []
+(defn reduceSecond
+  "Clock ticking reduction function."
+  []
   (swap! seconds - 1)
 )
 

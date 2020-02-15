@@ -1,4 +1,5 @@
 (ns com.view.main.MainView
+  "Main window and starting position in game"
   (:gen-class))
 (import '(javax.swing JFrame JButton JTextField JLabel JPanel SwingConstants)
         '(java.awt BorderLayout Color Dimension FlowLayout Font GridLayout)
@@ -28,50 +29,63 @@
     ;;**************************************GENERICS**************************************
 
     (defn setCustomFont
-      "Setting defined font on defined component"
+      "Setting defined font on defined component."
       [component fontname fonttype size]
       (.setFont component (Font. fontname fonttype size))
       )
 
 
     (defn setComponentSize
-      "Setting component's size"
+      "Setting component's size."
       [component i j]
       (.setPreferredSize component (Dimension. i j))
       )
 
     ;;**************************************LETTERS**************************************
 
-    (defn lockTextField []
+    (defn lockTextField
+      "Locking input text field for inserting text."
+      []
       (doseq [x (range 0 12)]
         (.setEditable (.get fields x) false)
         )
       )
 
-    (defn addFieldToPanel []
+    (defn addFieldToPanel
+      "Helper function for adding text fields in Grid layout."
+      []
       (doseq [x (range 0 12)]
         (.add texts (.get fields x))
        )
     )
 
-    (defn setFieldsSize []
+    (defn setFieldsSize
+      "Setting prefixed size for text fields."
+      []
       (doseq [x (range 0 12)]
         (setComponentSize (.get fields x) 90 90)
         )
       )
 
-    (defn addTextToField [index text]
+    (defn addTextToField
+      "Setting text value to specific text field at position index."
+      [index text]
       (.setText (.get fields index) text)
       )
 
-    (defn inspectTextPreviousField [currentIndex]
+    (defn inspectTextPreviousField
+      "Method used for Puzzle Engine to inspect text on previous field
+      for probability reasons."
+      [currentIndex]
       (if (<= currentIndex 0)
         ""
         (.getText (.get fields (- currentIndex 1)))
         )
       )
 
-    (defn setFormatField []
+    (defn setFormatField
+      "Format Setter."
+      []
       (doseq [x (range 0 12)]
         (doto (.get fields x)
           (.setFont (Font. Font/SERIF, Font/BOLD, 25))
@@ -82,7 +96,9 @@
         )
       )
 
-    (defn setColorField [color]
+    (defn setColorField
+      "Color Setter."
+      [color]
       (doseq [x (range 0 12)]
         (.setBackground (.get fields x) color)
         )
@@ -90,19 +106,27 @@
 
     ;;**************************************TIME**************************************
 
-    (defn clearTime []
+    (defn clearTime
+      "Clearing time label."
+      []
       (.setText timeField "")
       )
 
-    (defn setTime [text]
+    (defn setTime
+      "Setter."
+      [text]
       (.setText timeField text)
       )
 
-    (defn lockTextTime []
+    (defn lockTextTime
+      "Locking Time for text insertions."
+      []
       (.setEditable timeField false)
       )
 
-    (defn setFormatTime []
+    (defn setFormatTime
+      "Format Setter."
+      []
       (doto timeField
         (.setFont (Font. Font/SERIF, Font/BOLD, 25))
         (.setForeground (Color. 0 0 0))
@@ -113,22 +137,30 @@
 
     ;;**************************************INSERT**************************************
 
-    (defn getInsertedText []
+    (defn getInsertedText
+      "Inserted text Getter."
+      []
       (.getText insertField)
       )
 
-    (defn setInsertedText [text]
+    (defn setInsertedText
+      "Inserted text Setter."
+      [text]
       (.setText insertField text)
       )
 
-    (defn setInsertedFormat []
+    (defn setInsertedFormat
+      "Format setter."
+      []
       (doto insertField
         (.setFont (Font. Font/SERIF, Font/ITALIC, 20))
         (.setHorizontalAlignment JTextField/CENTER)
         )
       )
 
-    (defn setInsertedFormat2 []
+    (defn setInsertedFormat2
+      "Format setter."
+      []
       (doto insertField
         (.setFont (Font. Font/SERIF, Font/PLAIN, 20))
         (.setHorizontalAlignment JTextField/CENTER)
@@ -137,7 +169,9 @@
 
     ;;**************************************LISTENERS**************************************
 
-    (defn addStopListener []
+    (defn addStopListener
+      "Test method only."
+      []
       (.addActionListener stopButton
          (proxy [ActionListener] []
            (actionPerformed [e] (println "Hello")
@@ -146,23 +180,33 @@
        )
     )
 
-    (defn setStopListener [^ActionListener stopListener]
+    (defn setStopListener
+      "ActionListener for Stop button."
+      [^ActionListener stopListener]
       (.addActionListener stopButton stopListener)
       )
 
-    (defn setClearListener [^ActionListener clearListener]
+    (defn setClearListener
+      "ActionListener for Clear button."
+      [^ActionListener clearListener]
       (.addActionListener clearButton clearListener)
       )
 
-    (defn setConfirmListener [^ActionListener confirmListener]
+    (defn setConfirmListener
+      "ActionListener for Confirm button."
+      [^ActionListener confirmListener]
       (.addActionListener confirmButton confirmListener)
       )
 
-    (defn setConfirmListener [^MouseListener insertMouseListener]
+    (defn setConfirmListener
+      "MouseListener for InsertField button."
+      [^MouseListener insertMouseListener]
       (.addMouseListener insertField insertMouseListener)
       )
 
-    (defn setConfirmListener [^KeyListener insertKeyListener]
+    (defn setConfirmListener
+      "KeyListener for InsertField button."
+      [^KeyListener insertKeyListener]
       (.addKeyListener insertField insertKeyListener)
       )
 

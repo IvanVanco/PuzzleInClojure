@@ -1,11 +1,13 @@
 (ns com.model.Converting
+  "Used for converting latin letters/word into cyrillic"
   (:require [com.data.Repository :as letters]))
 
 
-(def mapping (zipmap (map keyword letters/latin) letters/cyrillic))
+(def ^:dynamic mapping (zipmap (map keyword letters/latin) letters/cyrillic))
 
 
 (defn letters-to-word
+  "Reverse function for converting word to letters."
   ([word] (letters-to-word word ""))
   ([word acc]
    (if-let [letters (seq word)]
@@ -15,6 +17,8 @@
 
 
 (defn word-to-letters
+  "Transformation function for converting word to letters - this step have some logic built into it,
+   using serbian's language rules."
   ([word] (word-to-letters word (vector)))
   ([word acc]
    (if-let [letters (seq word)]
@@ -32,6 +36,7 @@
 
 
 (defn conversion
+  "Main function for mapping repository letters with result."
   ([letters] (conversion letters (vector)))
   ([letters acc]
    (if (not (empty? letters))
@@ -42,6 +47,7 @@
 
 
 (defn latinToCyrillic
+  "Convert function with 3 part function. This is conversation process."
   [word]
   (->> word
        (word-to-letters)
@@ -50,11 +56,16 @@
        )
   )
 
-(defn convertorBigWord [word]
+
+(defn convertorBigWord
+  "Converting function to upper case letters."
+  [word]
   (latinToCyrillic (.toUpperCase word))
   )
 
-(defn convertorSmallWord [tip word]
+(defn convertorSmallWord
+  "Converting function to lower case letters."
+  [tip word]
   (latinToCyrillic (.toLowerCase word))
   )
 

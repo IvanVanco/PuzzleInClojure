@@ -1,16 +1,17 @@
 (ns com.data.Repository
+  "This is place for storing embedded data and function with IO."
   (:require [clojure.java.io :as io]))
 
 
 ;;Serbian Letter vector
-(def cyrillic ["А" "Б" "В" "Г" "Д" "Ђ" "Ђ" "Е" "Ж" "З" "И" "Ј" "К" "Л" "Љ" "М" "Н" "Њ" "О"
+(def ^:dynamic cyrillic ["А" "Б" "В" "Г" "Д" "Ђ" "Ђ" "Е" "Ж" "З" "И" "Ј" "К" "Л" "Љ" "М" "Н" "Њ" "О"
                "П" "Р" "С" "Т" "Ћ" "У" "Ф" "Х" "Ц" "Ч" "Џ" "Џ" "Ш"])
 
-(def latin    ["A" "B" "V" "G" "D" "DJ" "Đ" "E" "Ž" "Z" "I" "J" "K" "L" "LJ" "M" "N" "NJ"
+(def ^:dynamic latin    ["A" "B" "V" "G" "D" "DJ" "Đ" "E" "Ž" "Z" "I" "J" "K" "L" "LJ" "M" "N" "NJ"
                "O" "P" "R" "S" "T" "Ć" "U" "F" "H" "C" "Č" "DŽ" "DZ" "Š"])
 
 ;;Probability Map
-(def probability {:А   {:weight (/ 2.0 30) :eject false}
+(def ^:dynamic probability {:А   {:weight (/ 2.0 30) :eject false}
                   :Е   {:weight (/ 2.0 30) :eject false}
                   :И   {:weight (/ 2.0 30) :eject false}
                   :О   {:weight (/ 2.0 30) :eject false}
@@ -45,13 +46,17 @@
 
 
 ;;Dictionary vector
-(defn dictionaryInitialization []
+(defn dictionaryInitialization
+  "Function for reading word dictionary file."
+  []
   (with-open [read (io/reader ".\\resources\\Recnik cirilica.txt" :encoding "UTF-16")]
     (reduce conj [] (line-seq read)))
   )
 
 
-(defn save [word]
+(defn save
+  "Function for storing supervising words in persistant vector. Words are saved as text files."
+  [word]
   (with-open [w (clojure.java.io/writer ".\\resources\\Supervizija.txt" :append true :encoding "UTF-16" )]
 
     (.write w (str "\n" word) )))

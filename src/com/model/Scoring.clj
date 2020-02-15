@@ -1,9 +1,12 @@
-(ns com.model.Scoring)
+(ns com.model.Scoring
+  "For calculating score based on different word sizes.")
 
-(defn length [obj] (.length obj))
+(defn ^:dynamic length [obj] (.length obj))
 
 
-(defn scoring [clientword computerword]
+(defn scoring
+  "Return points based on clientword and computerword sizes."
+  [clientword computerword]
   (let [clientsize (length clientword)
         computersize (length computerword)]
     (if (and (= clientsize computersize) (= clientword computerword))

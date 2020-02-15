@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fonclojure.iml" filepath="$PROJECT_DIR$/fonclojure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Puzzle.iml" filepath="$PROJECT_DIR$/Puzzle.iml" />
     </modules>
   </component>
 </project>
