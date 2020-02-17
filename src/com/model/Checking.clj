@@ -26,7 +26,7 @@
 (defn getInsertedWord
   "Inserted word Getter."
   []
-  (letters/makeWrongInsertedWord)
+  (letters/makeInsertedWord)
   )
 
 (defn fillInputWord
@@ -72,7 +72,7 @@
   "Checking for semantic correctness of the word entries entered by player with available dictionary
    and returning result as boolean."
   []
-  (let [word (conversation/convertorSmallWord "dictionary" letters/makeWrongInsertedWord)]
+  (let [word (letters/makeInsertedWord)]
     (if (nil? (some #(= word %) (dictionary/getDictionary)))
       (reset! isFoundWordInDictionary true)
 

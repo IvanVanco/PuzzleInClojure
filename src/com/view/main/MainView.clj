@@ -278,7 +278,3 @@
   )
 
 
-
-(defn -main [& args]
-  (swing))
-

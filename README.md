@@ -27,17 +27,16 @@ during the specific time, they need to make longest word to win.
 
 11. Documentation - find on https://ivanvanco.github.io/PuzzleInClojure/
 
+12. Testing (unit and itegration tests)
+
 
 # What is new
 
- 1. API Documentation - on https://ivanvanco.github.io/PuzzleInClojure/
+ 1. Added number of tests, using Clojure v1.10.1 API
 
- 2. Added external library support for creating documentation.
-    Find more info on this link https://github.com/funcool/codeina 
+ 2. Updated API Documentation - on https://ivanvanco.github.io/PuzzleInClojure/
  
- 3. Changed project's name to Puzzle 
- 
- 4. Fixes in MessageView namespace
+ 4. Fixes in various namespaces
 
 
 
@@ -53,7 +52,8 @@ during the specific time, they need to make longest word to win.
 4. Clojure's Swing integration
 5. Atoms - great concept for storing state of objects. It can be changed/modified with swap! and reset! function.
 6. Lein User Profiles.clj - added documentation library support and configuration globally
-7. Creating dynamic documentation using 3rd party libries 
+7. Creating dynamic documentation using 3rd party libries
+8. Creating and working with testing framework. It is great tool for automating process and finding errors. 
 
 * I found cycle dependency problem in my original code between Repository namespace(SlovaRepository class) and Konvertovanja namespace (KonvertorRec). 
   Dependency is removed from Repository namespace, and transfered to future Message Engine namespace.

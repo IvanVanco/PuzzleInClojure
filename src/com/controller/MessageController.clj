@@ -12,10 +12,10 @@
   [computerword point]
   (check/findWord)
   (message/dictionaryMessage (deref (check/isFoundWordInDictionary))
-                             (.length (check/getInsertedWord))
-                             (point)
+                           (.length (check/getInsertedWord))
+                           (point)
 
-                             ))
+                           ))
 ;;;;;;;;;;;;;;;ConfirmWord;;;;;;;;;;;;;;;;;;;;;;;;;
 (defn confirmWord
   "Confirm Word message logic./n
@@ -24,8 +24,8 @@
   []
   (check/checkWord)
   (message/confirmWord check/isEmptyWrongInsertedWord
-                      check/getInsertedWord
-                      check/makeWrongInsertedWord
+                       check/getInsertedWord
+                       check/makeWrongInsertedWord
    )
 )
 

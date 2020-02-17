@@ -71,7 +71,7 @@
 (defn initializationDictionary
   "Using initialize function will import dictionary from file system, using Repository namespace."
   []
-  (reset! dictionary (into [] (map constructor (dictionary/dictionaryInitialization)) ))
+  (reset! dictionary (into [] (map constructor (dictionary/dictionaryInitialization))))
   (setSize (dictionary/dictionaryInitialization))
   )
 

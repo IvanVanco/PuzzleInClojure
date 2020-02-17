@@ -7,8 +7,8 @@
   "Triggered just after Confirm view. Frame for displaying checking of
    inserted word existences in word dictionary and computer's longest word."
   [condition clientsize points]
-  (let [option ["Yes" "No"]]
-    (if (condition)
+  (let [option (object-array ["YES" "NO"])]
+    (if (= true condition)
       (JOptionPane/showMessageDialog nil (str "Bravo, the word you entered was found in the dictionary.\nYour word has a length " clientsize " letters and has "
                                                        points " points.") "Game end" JOptionPane/INFORMATION_MESSAGE
                                      )
@@ -34,9 +34,9 @@
   "Showed when user click on confirm button on MainView, to perform checking of
    inserted word existences in drawn letters."
   [condition insertedword difference]
-  (let [option ["Yes" "No"]]
-    (if (condition)
-      (if (not= empty? insertedword)
+  (let [option (object-array ["YES" "NO"])]
+    (if (= true condition)
+      (if (= false (empty? insertedword))
         (JOptionPane/showOptionDialog nil (str "Bravo, all the letters you entered match the drawn letters.\nDo you want to confirm the word "
                                                         insertedword " or to try again?") "Question mark" JOptionPane/YES_NO_OPTION JOptionPane/QUESTION_MESSAGE
                                       nil option (first option))
@@ -79,9 +79,9 @@
 (defn setExpiredTimeWord
   "Window message for reading input word from user."
   []
-  (JOptionPane/showInputDialog nil  "Time is up.\nPlease enter a word."
-                               "Game end" JOptionPane/WARNING_MESSAGE
-                               )
+  (reset! word (JOptionPane/showInputDialog nil  "Time is up.\nPlease enter a word."
+                                            "Game end" JOptionPane/WARNING_MESSAGE
+                                            ))
   )
 
 
@@ -89,19 +89,18 @@
   "Composition of other two message views, with time trigger in mind.
    I used atom for storing question answer for other application modules."
   [condition difference]
-  (let [option  ["Yes" "No"]
-        currentword     (setExpiredTimeWord)
-        currentquestion (JOptionPane/showOptionDialog nil
-                                                      (str "Bravo, all the letters you entered match the drawn letters.\nDo you want to confirm the word "
-                                                           currentword " or to try again?") "Question mark" JOptionPane/YES_NO_OPTION JOptionPane/QUESTION_MESSAGE
-                                                      nil option (first option))]
-    (if (empty? @word)
+  (let [option  (object-array ["YES" "NO"])
+        currentword     (setExpiredTimeWord)]
+    (if (= true (empty? @word))
       (setExpiredTimeEnd)
-      (if (condition)
-        (do (currentquestion)
+
+      (if (= true condition)
+        (do (reset! question (JOptionPane/showOptionDialog nil
+                                          (str "Bravo, all the letters you entered match the drawn letters.\nDo you want to confirm the word "
+                                               currentword " or to try again?") "Question mark" JOptionPane/YES_NO_OPTION JOptionPane/QUESTION_MESSAGE
+                                          nil option (first option)))
             (reset! word currentword)
-            (reset! question currentquestion)
-            (if (= currentquestion 1)
+            (if (= @question 1)
               (setExpiredTimeEnd)
               )
             )

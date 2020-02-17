@@ -1,6 +1,6 @@
 (ns com.model.Drawing
   "Abstraction of letter drawing process in game"
-  (:require [com.model.Converting :as convertor :refer [convertorSmallWord]]
+  (:require [com.model.Converting :as convertor]
             [com.data.Repository :as letters]
             [clojure.string :as s]))
 
@@ -62,10 +62,10 @@
     assoc index "")
   )
 
-(defn makeWrongInsertedWord
+(defn makeInsertedWord
   "Returning String word from builted inserted letters."
   []
-  (let [conversion (mapv convertor/convertorBigWord (first @insertedletters))]
+  (let [conversion (mapv convertor/convertorSmallWord "small" @insertedletters)]
     (apply str conversion)
     )
   )
@@ -141,7 +141,8 @@
       (recur (inc x)
              (swap!
                drawnletters
-               conj (.charAt (.getText (.get fields x)) 0)
+               ;conj (.charAt (.getText (.get fields x)) 0)
+               conj (.getText (.get fields x))
                )
              )
       )
